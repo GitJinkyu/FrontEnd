@@ -1,0 +1,57 @@
+<!-- 이것은 스크립트 유효성 검사를 위한 HTML 코드입니다 -->
+<form id="registrationForm" onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br> <!-- 이메일 입력 필드 -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br> <!-- 이름 입력 필드 -->
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate"><br><br> <!-- 생년월일 입력 필드 -->
+    <input type="submit" value="Submit"> <!-- 제출 버튼 -->
+    <input type="hidden" id="age" name="age"> <!-- 나이를 담을 숨겨진 입력 필드 -->
+</form>
+
+<script>
+    function validateForm() {
+        // 이메일, 이름, 생년월일 필드에서 값 가져오기
+        var email = document.forms["registrationForm"]["email"].value;
+        var name = document.forms["registrationForm"]["name"].value;
+        var birthdate = document.forms["registrationForm"]["birthdate"].value;
+
+        // 이메일이나 이름, 생년월일 중 하나라도 비어있을 경우
+        if (email == "" || name == "" || birthdate == "") {
+            alert("All fields must be filled out");
+            return false; // 제출 취소
+        }
+
+        // 이메일 유효성 검사
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return false; // 제출 취소
+        }
+
+        // 생년월일 유효성 검사
+        var birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!birthdateRegex.test(birthdate)) {
+            alert("Invalid birthdate");
+            return false; // 제출 취소
+        }
+
+        // 생년월일로부터 나이 추출
+        var today = new Date();
+        var birthdateArray = birthdate.split("-");
+        var birthYear = parseInt(birthdateArray[0]);
+        var birthMonth = parseInt(birthdateArray[1]);
+        var birthDay = parseInt(birthdateArray[2]);
+        var age = today.getFullYear() - birthYear;
+        if (today.getMonth() < birthMonth || (today.getMonth() == birthMonth && today.getDate() < birthDay)) {
+            age--; // 아직 생일이 안 지났으면 한 살 빼줌
+        }
+
+        // 추출한 나이를 숨겨진 입력 필드에 담기
+        document.getElementById("age").value = age;
+
+        // 모든 유효성 검사가 통과되면 제출 허용
+        return true;
+    }
+</script>
