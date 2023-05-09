@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>폼관련태그</title>
+    
 </head>
 <body>
     <!--  
@@ -33,12 +34,13 @@
                                             search=검색어
                                                 &   요소가 여러개인 경우 &로 연결
                                             email=email
+                        * id='' 속성은 가져가지않음 
          -->
         검색할 내용 : 
-        <input type='text' name='search' size='15' value='검색어'>
+        <input type='text' name='search' size='15' value='검색어' autofocus>
         <br>
         이메일 : 
-        <input type='text' name='email' size='15' value='email'>
+        <input type='text' name='email' size='15' value='email' readonly>
 
         <!-- 
             submit버튼
@@ -83,11 +85,231 @@
         <!-- 
             type: text
             한줄짜리 텍스트를 입력 할 수 있는 텍스트 박스
+            value:기본값부여
         -->
-        아이디: <input type='text' name='userId' required 
-                size='20' maxlength='15' placeholder='아이디를 입력해주세요' >
+        <!-- 
+            maxlength:입력 글자수 제한
+            placeholder:텍스트 박스에 글자 입력
+         -->
+    <ul>
+        <li>
+            아이디: <input type='text' name='userId' id='userId' required  value='아이디'
+            size='20' maxlength='15' placeholder='아이디를 입력해주세요' >
+        </li>
+
+        <!-- 
+            type: password
+            비밀번호를 입력 할 수 있는 텍스트 상자
+            사용자의 입력 값을 확인 할 수 있다
+         -->
+         <li>
+             비밀번호: <input type='password' name='userPW' id='userPW' required value='이메일'
+             size='20' maxLegnt='15' placeholder='비밀번호를 입력해주세요'>
+         </li>
+        
+        <!-- 
+            type: email
+            submit될때 이메일 형식을 체크해준다.
+         -->
+         <li>
+             이메일: <input type='email' name='userEmail' id='userEmail' required value='email@email'
+             size='20' maxLegnt='15' placeholder='이메일을 입력해주세요'>
+         </li>
+
+         <!-- 
+            type: url
+            submit될때 http://  https://  가 붙어있는지 체크.
+          -->
+         <li>
+            홈페이지: <input type='url' name='homepage' id='homepage' required value='http://ss.ss'
+                        placeholder='홈페이지를 입력해주세요'>
+         </li>
+
+         <li>
+        <!-- 
+            type='search'
+            검색어 입력후 오른쪽에 x버튼이 생겨서 검색어 삭제가 쉽다
+         -->
+            검색: <input type='search' name='searchText' id='searchText' placeholder='검색할 내용을 입력'>
+         </li>
+
+         <!-- 
+            datalist 태그
+                텍스트 필드에서 데이터 목록중
+                값을 선택하여 입력
+                *HTML5에서 type='text'에 새로 추가된 기능
+          -->
+         <li>
+            색상: <input type='text' name='color' list='myColor'>
+            <datalist id='myColor'>
+                <option value='black'>검정색</option>
+                <option value='white'>흰색</option>
+                <option value='red'>빨간색</option>
+            </datalist>
+         </li>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+
+    </ul>
 
     </form>
+    <hr>
+    <h3>숫자와 관련된 input 태그들</h3>
+    <form>
+        <!-- 
+            type='number'
+            입력창에 숫자를 입력하는 것이 기본이지만,
+            브라우저에 따라서 스핀 박스가 표시되기도 한다.
+            ex장바구니등에 쓰임
+            (스핀 박스 : 입력창 오른쪽에 위/아래 화살표 버튼)
+            value:기본값
+            min:최소값
+            max:최대값
+            step:한번에 오르는 값
+         -->
+         <input type="number" name="amount" id="amount"
+                value='0' min='0' max='100' step='5'>
+        <br>
 
+        <!-- 
+            type="range"
+            슬라이드바를 통한 숫자 지정 기능
+         -->
+         <input type='range' name='point' id='point'
+                vlaue='300' min='0' max='1000' step='100'>
+        <br>
+         <input type="submit" value="전송">
+         <input type="reset" value="초기화">
+
+        <hr>
+    </form>
+
+    <h3>날짜/시간 관련 input 태그들</h3>
+    <form>
+        <!-- 
+            type='date/month/week/time/datetime/datetime_local'
+            
+         -->
+        date:   <input type="date" name="date" id="date" >
+                <input type="date" name="date1" id="date1" value='2023-05-09'>
+        <br>
+        month:  <input type="month" name="month" id="month">
+                <input type="month" name="month1" id="month1" value='2023-05'>
+        <br>
+        time:   <input type="time" name="time" id="time">
+                <input type="time" name="time1" id="time1" value='10:44'>
+        <br>
+        datetime:   크롬,ie,엣지 에서 지원되지 않음 -> datetime-local로 대체
+        <br>
+        <input type="datetime" name="datetime" id="datetime">
+        <br>
+        datetime-local: <input type="datetime-local" name="dtl" id="dtl">
+        <br>
+        week:   <input type="week" name="week" id="week">
+        <br>
+        <input type="submit" value="전송">
+        <input type="reset" value="초기화">
+    </form>
+    <h3>라디오 버튼과 체크박스</h3>
+    <form>
+        <!-- 
+            type='radio'
+            여러 항목 중 한 가지만 선택해야 할 경우 사용한다.
+            태그 여러개를 선언하여 하나의 용도로 사용할 경우
+            name 속성의 값이 같아야한다.
+         -->
+         <fieldset>
+            <legend>성별</legend>
+            <!-- checked : 기본으로 선택해 놓는 항목 -->
+            <input type="radio" name="gender" id="gender" value='M'checked>남자
+            <input type="radio" name="gender" id="gender" value='F'>여자
+            <br>
+            <input type="submit" value="전송">
+            <input type="reset" value="초기화">
+
+         </fieldset>
+
+         <!-- 
+            type:'checkbox'
+            여러 항목 중 여러 가지를 선택해도 가능할 경우 사용한다.
+            태그 여러개를 선언하여 하나의 용도로 사용할 경우
+            name 속성의 값이 같아야한다.
+          -->
+          <fieldset>
+            <legend>취미</legend>
+
+            <input type="checkbox" name="hobby" value='baseball' checked>야구
+            <input type="checkbox" name="hobby" value='soccer'>축구
+            <input type="checkbox" name="hobby" value='basketball'>농구
+            
+            <br>
+            <input type="submit" value="전송">
+            <input type="reset" value="초기화">
+
+         </fieldset>
+         <input type="color" name="color" id="color">
+         <br>
+         파일선택: <input type="file" name="upload" id="upload" multiple>
+         <br>
+         <input type='hidden' name='hiddenvalue' value='1'>
+         <br>
+
+         <input type="button" value="button">
+         <input type="submit" value="submit">
+         <input type="reset" value="reset">
+         <br>
+         <button type="submit"><b>전송</b></button>
+         <button type="reset">초기화</button>
+         <button type="button">버튼</button>
+         <br>
+         <br>
+         <!-- 이미지 버튼 만들기 -->
+         <input type="image" value="img버튼" src='images/login.png' atlt='로그인버튼'>
+    </form>
+
+    <h3>드롭다운 목록 SELECT</h3>
+    <form>
+        <!-- 
+            select 태그와 option 태그
+            사용자가 내용을 입력하는 것이 아닌
+            여러 옵션 중에서 선택하게 하고 싶을때 사용하는 드롭 다운 목록이다.
+         -->
+         국적
+         <select>
+            <optgroup label='아시아'>
+                <option value='ko'>한국</option>
+                <option value='ch'>중국</option>
+                <!-- selected=기본값 -->
+                <option value='jp' selected>일본</option>
+            </optgroup>
+
+            <optgroup label='아메리카'>
+                <option value='en'>미국</option>
+            </optgroup>
+            <option value='' label='기타'></option>
+         </select>
+         <br>
+         <!-- 
+            textarea 태그
+            input type='text'와 비슷하지만 여러 줄을 입력 할 수 있다.
+          -->
+          <textarea name='tarea' placeholder='내용을 입력해주세요' cols='50' rows='20' 
+                    style='resize: none;'></textarea>
+         <br>
+
+         <!-- 
+            progress 태그
+            작업 시작을 0으로 하고 최대값에서
+            얼마나 진행되었는지 숫자로 표헌한다.
+          -->
+          progress: <progress value='90' max='100'></progress>
+          <br>
+
+          <!-- 
+            meter
+            전체 크기 중에서 얼마나 차지하고있는지 표현할때 사용한다.
+           -->
+           meter: <meter min='0' max='100' value='95' low='60' high='90'></meter>
+    </form>
 </body>
 </html>
