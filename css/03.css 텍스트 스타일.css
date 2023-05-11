@@ -189,3 +189,39 @@ h2 {
     /* 전부 소문자 */
     text-transform: lowercase;
 }
+
+/* 줄 간격 변경 */
+.lh1{
+    font-size: 1em;
+    line-height: 1em;
+    text-align: left;
+}
+.lh2{
+    font-size: 1em;
+    line-height: 2em;
+    text-align: right;
+}
+.lh3{
+    font-size: 1em;
+    line-height: 3em;
+    text-align: center;
+}
+.lh4{
+    font-size: 1em;
+    line-height: 4em;
+    text-align: justify;
+}
+
+table{
+    /* 캡션의 위치 (기본값: top)*/
+    caption-side: bottom;
+    border: 1px solid #999;
+
+    /* 테이블을 한줄로 표시 */
+    border-collapse: collapse;
+}
+
+th,tr,td{
+    border: 1px solid #999;
+    padding: 10px;
+}

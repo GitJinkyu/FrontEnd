@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            /* 불릿제거 */
+            list-style: none;
+
+            /* float해제 */
+            /* clear: both; */
+        }
+        li{
+            /* float: left; */
+
+            /* 가로정렬하기위해 인라인블록으로 변경 */
+            /* 요소 사이 사이 공백이 생김  */
+            display: inline-block;
+            
+            border: 1px solid black;
+            width: 100px;
+            /* height와 line-height를 맞춰주면 세로 정렬이된다 */
+            height: 50px;
+            line-height: 50px;
+
+            /* 가로 정렬 */
+            text-align: center;
+
+        }
+        a{
+            /* 
+                a요소는 inline 요소이므로
+                width,height 속성을 가지지 못함
+                (영역을 가질수없음 콘텐츠의 영역만 가질수있음)
+                ->inline block으로 속성 변경을 해주면된다
+            */
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid black;
+            
+            /* a태그의 사이즈와 li태그의 사이즈를 맞춰서 메뉴 링크 클릭 칸을 꽉채워줌 */
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href='#'>메뉴1</a></li>
+        <li><a href='#'>메뉴2</a></li>
+        <li><a href='#'>메뉴3</a></li>
+        <li><a href='#'>메뉴4</a></li>
+    </ul>
+    
+    <ul>
+        <li><a href='#'>메뉴1</a></li>
+        <li><a href='#'>메뉴2</a></li>
+        <li><a href='#'>메뉴3</a></li>
+        <li><a href='#'>메뉴4</a></li>
+    </ul>
+</body>
+</html>

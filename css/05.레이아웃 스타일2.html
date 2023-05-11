@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        p{
+            width: 500px;
+            height: 300px;
+            /* 
+            #000 검정 #111 #222 #333 ...
+            #999 16진수 이므로 a(10)~f(16)
+            #aaa #bbb #ccc...
+            #fff 흰색
+            */
+            background-color: #eee;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        #static{
+            /* 기본값 */
+            position: static;
+        }
+        #relative-1{
+            position: relative;
+        }
+        #relative-2{
+            position: relative;
+
+            /* 왼쪽에서 100px 떨어지게 */
+            left: 100px;
+            /* 위에서 50px 떨어지게 (음수:위로 이동) */
+            top:-50px;
+        }
+        #fixed{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: #222;
+            /* 오른쪽에서 30px 떨어지게 */
+            right:30px;
+            /* 위에서 30px 떨어지게 */
+            top:30px;
+        }
+        #outter{
+            position: relative;
+
+        }
+        #first{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+
+        }
+
+        #second{
+            width: 200px;
+            height: 200px;
+            background-color: seagreen;
+            position: absolute;
+            top:50px;
+            left:50px;
+
+
+        }
+
+        #third{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>포지셔닝</h2>
+    CSS를 이용해서 여러 요소를 적절하게 배치하는 것
+    <div id='outter'>
+    <p id='first'></p>
+    <p id='second'></p>
+    <p id='third'></p>
+    </div>
+
+    <p id='static'>
+        Id in labore fugiat officia ea. Ullamco minim tempor cillum est fugiat adipisicing. 
+        
+        Deserunt et adipisicing laboris sit exercitation eu labore elit exercitation enim id consectetur mollit. 
+        
+        In ipsum adipisicing culpa nostrud esse irure dolore est dolore tempor exercitation nulla adipisicing esse. 
+        
+        Lorem labore dolor sint officia enim aliqua cillum sint velit dolore magna aliquip exercitation. 
+        
+        Exercitation elit mollit tempor occaecat. 
+
+    </p>
+
+    <p id='relative-1'>
+        Nisi esse proident officia adipisicing voluptate voluptate eiusmod mollit laborum cupidatat. Aute qui dolor laboris nulla tempor sunt ea sit Lorem sint fugiat fugiat deserunt. Voluptate deserunt officia incididunt aliqua ad fugiat irure amet quis occaecat nostrud. Ut laboris occaecat nisi voluptate velit quis occaecat deserunt non minim est.
+
+        Pariatur ullamco sunt aliqua irure. Nulla sit ea ut dolore cupidatat. Reprehenderit et dolor fugiat pariatur voluptate. Enim elit eu aliqua nostrud irure non anim tempor anim enim consectetur anim magna.
+    </p>
+
+    <p id='relative-2'>
+        Officia eu velit culpa duis exercitation ipsum laboris adipisicing sit dolor anim. Cupidatat ut aliquip consequat ex amet dolor amet. Nostrud magna ipsum culpa sit ex commodo nostrud dolore. Culpa consequat sunt laboris pariatur ullamco velit officia et et aliqua qui adipisicing.
+
+        Ut magna adipisicing ad officia amet ullamco excepteur deserunt fugiat eu. Fugiat do pariatur irure proident elit dolore aliquip. Quis enim enim eiusmod ea. Eu exercitation nisi id consequat magna.
+    </p>
+
+    <p id='fixed'>
+        Incididunt amet excepteur deserunt pariatur in excepteur qui pariatur Lorem non eu fugiat. Consectetur ea exercitation elit veniam aliquip in minim sunt fugiat laborum sint non. Proident culpa qui aute voluptate in sint officia ea tempor ad sit ea incididunt. Tempor voluptate esse cupidatat non velit.
+
+        Tempor id do ea ex dolor occaecat aliquip. Incididunt aliqua voluptate ea incididunt reprehenderit enim esse excepteur eu consectetur in est magna. Voluptate occaecat nisi qui et consequat nulla adipisicing eiusmod labore nostrud eiusmod dolor.    
+    </p>
+
+    <p>
+        Id nulla exercitation est qui fugiat tempor.
+    </p>
+
+    <p>
+        Exercitation cillum duis elit aute reprehenderit.
+    </p>
+
+    <p>
+        Anim et sunt ipsum cupidatat est anim sint sit et id commodo.
+    </p>
+</body>
+</html>
