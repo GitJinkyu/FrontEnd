@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 이미지</title>
+    <style>
+        body{
+            height: 100vw;
+            background-image: url(/html/images/ddog.jpg);
+            background-repeat: no-repeat;
+            background-position: right top;
+
+            /* 이미지 고정 */
+            background-attachment: fixed;
+            
+            /* 여러 속성을 한번에 축약해서 표기 가능 */
+            /* 속성값이 다 다르므로 순서는 상관없음 */
+            /* background: url(/html/images/bg4.jpg) no-repeat center bottom fixed; */
+        }
+        #container{
+            background-image: url(/html/images/apple-bg.jpg);
+            /* 배경화면 반복 유무 지정 */
+            /* background-repeat: no-repeat; */
+            background-repeat: repeat;
+
+            /* 배경화면 적용범위 지정 *
+            /* border 영역까지 포함하여 배경화면 출력 */
+            /* background-clip: border-box; */
+            /* border를 제외한 padding 영역까지 포함하여 배경화면 출력 */
+            /* background-clip: padding-box; */
+            /* content 영역까지만 배경화면 출력 */
+            /* background-clip: content-box; */
+
+            /* 텍스트 자리에 배경 표시 */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+
+
+            border: 10px dotted #ccc;
+            width: 800px;
+            padding: 30px;
+            font-size: 150px;
+            text-align: center;
+        }
+
+        ul{
+            list-style: none;
+            margin: 0;
+        }
+
+        li{
+            /* 배경이미지 설정 */
+            background-image: url(/html/images/book-icon.png);
+            
+            /* 반복제거 */
+            background-repeat: no-repeat;
+            
+            /* 배경 위치지정 */
+            /* 수평:lfet center right 백분율 길이 값 */
+            /* 수직:top center bottom 백분율 길이 값 */
+            background-position: left center;
+            
+            /* 줄간격 */
+            line-height: 40px;
+
+            /* 책 아이콘 안겹치게 텍스트 들여쓰기 */
+            padding-left: 50px;
+
+        }
+
+        .bg{
+            background-image: url(/html/images/logo.png);
+            background-repeat: no-repeat;
+            width: 680px;
+            height: 98px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id='container'>
+        🍎🍎🍎
+    </div>
+
+    <h1 class='bg'></h1>
+
+    <ul>
+        <li>회사 소개</li>
+        <li>도서</li>
+        <li>자료실</li>
+        <li>동영상 강의</li>
+    </ul>
+
+
+</body>
+</html>

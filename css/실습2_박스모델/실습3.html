@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 레이아웃</title>
+    <style>
+        
+        /* 
+        nav안에 들어있는 모든ul에 적용
+        공백:자식요소/자손요소를 선택
+        */
+        nav ul{
+            padding: 0px;
+            list-style: none;
+        }
+
+        li{
+            /* display: inline-block; */
+
+            /* li 사이 사이 지워지지않는 한 칸을 붙이기 위해서 float을 사용 */
+            float: left;
+
+
+            width: 100px;
+            height: 30px;
+            border-left: 1px solid red;
+        }
+
+        a{
+            /* 
+            인라인 요소인 a태그를
+            블럭처럼 크기를 지정 하기 위해 인라인블록으로 변경 
+            */
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            color: burlywood;
+            font-weight: 700;
+        }
+
+        /* 클래스나 id를 안쓰고 선택 */
+        section article{
+          border-top: 2px dotted gray;
+          border-bottom: 2px dotted gray;
+
+          padding-left: 10px;
+
+          margin-bottom: 10px;
+        }
+
+        /* ID 사용해서 선택 */
+        /* #border1{
+          border-top: 2px dotted gray;
+          border-bottom: 2px dotted gray;
+          margin-bottom: 10px;
+        } */
+
+        /* a태그에 마우스가 올라왔을때 */
+        a:hover{
+          color: white;
+          background-color: red;
+        }
+
+        hr{
+          /* 
+          float을 사용하면 구조가 틀어질수도있기때문에 
+          사용이 끝나는 위치를 지정해서 float을 해제 
+          */
+          clear: both;
+
+          border-style: none;
+        }
+
+        #container{
+          margin: 0px auto;
+          width: 800px;
+          height: 700px;
+        }
+
+    </style>
+</head>
+<body>
+  <div id='container'>
+      <nav>
+        <ul>
+          <li><a href="#">애완견 종류</a></li>
+          <li><a href="#">입양하기</a></li>
+          <li><a href="#">건강돌보기</a></li>
+          <li><a href="#">더불어살기</a></li>
+        </ul>
+        <hr>
+      </nav>
+    <section id="content">
+      <h2>강아지 용품 준비하기</h2>
+      <article id='border1'>  
+        <h3>강아지 집 </h3>
+        <p>강아지가 편히 쉴 수 있는 포근한 집이 필요합니다. 강아지의 집은 강아지가 다 큰 후에도 계속 쓸 수 있는 집으로 구입하세요.집을 구입하실 때는 박음질이 잘 되어 있는지, 세탁이 간편한 제품인지 꼭 확인하시고 고르시는 것이 좋습니다.</p>
+      </article>
+      <article id='border1'> 
+        <h3>강아지 먹이 </h3>
+        <p>강아지의 먹이는 꼭 어린 강아지용으로 나와있는 사료를 선택하세요. 강아지들은 사람에 비해 성장속도가 8배정도 빠르답니다. 따라서 강아지에게는 성장속도에 맞는 사료를 급여하셔야 합니다. 사람이 먹는 음식을 먹게 되면 양념과 향신료에 입맛이 익숙해지고, 비만이 될 가능성이 매우 높아집니다. 강아지용 사료는 생후 12개월까지 급여하셔야 합니다.</p>
+      </article>  
+    </section>
+    <footer>
+      <p>Copyright 2012 funnycom</p>
+    </footer>
+  </div>
+</body>
+</html>

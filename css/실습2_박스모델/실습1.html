@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>배경 스타일</title>
+    <style>
+			.container{
+      
+        background-image: url(/html/images/apple-bg.jpg);
+        width: 600px;
+        height: 400px;
+        padding-left: 30px;
+        /* 컨텐츠의 위치를 지정하기 위해
+          컨테이너의 포지션 속성을 relative로 변경
+        */
+        position: relative;
+      }
+
+      .content{
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.616);
+        position: absolute;
+        /* bottom: 0px; */
+        top: 300px;
+        text-align: center;
+      }
+      h1{
+        font-size: 25px;
+
+      }
+    </style>
+  </head>
+  <body>
+		<div class="container">
+			<div class="content">
+				<h1>하루 한 알의 사과는 의사를 멀리 한다</h1>		
+			</div>
+		</div>
+  </body>
+</html>
