@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+
+   ul{
+	display: inline-block;
+   }
+   li{
+	display: inline-block;
+	list-style: none;
+	margin: 10px;
+	
+
+   }
+   li a{
+	text-decoration: none;
+	color: darkseagreen;
+	padding: 5px 20px;
+   }
+
+   /* 
+   ^=us 로 시작하는,
+   $=us 로 끝나는,
+   |=us 이거나 us-로 시작하는
+   */
+   ul>li>a[title^=us]{
+	background: url(/css/실습3_레이아웃/images/us.png) no-repeat left center;
+   }
+   ul>li>a[title^=ch]{
+	background: url(/css/실습3_레이아웃/images/ch.png) no-repeat left center;
+   }
+   ul>li>a[title^=jp]{
+	background: url(/css/실습3_레이아웃/images/jp.png) no-repeat left center;
+   }
+
+</style>
+</head>
+
+<body>
+	<ul>
+		<li>외국어 서비스 : </li>
+		<li><a href="/css/실습3_레이아웃/images/us.png" title="us-english">영어</a></li>
+		<img url='/css/실습3_레이아웃/images/us.png'>
+		<li><a href="/css/실습3_레이아웃/images/ch.png" title="chn">중국어</a></li>
+		<li><a href="/css/실습3_레이아웃/images/jp.png" title="ja">일본어</a></li>
+	</ul>
+</body>
+ </html>

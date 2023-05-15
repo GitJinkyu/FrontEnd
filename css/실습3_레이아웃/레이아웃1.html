@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        *{
+            margin: 0;
+
+            /* 컨텐츠+패딩+보더까지 포함한 사이즈 */
+            box-sizing: border-box;
+
+            
+        }
+
+        .wrap{
+            width: 1206px;
+            height: 800px;
+
+            background-color: navajowhite;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 120px;
+            background-color: violet;
+        }
+        header .logo{
+            width: 100%;
+            height: 90px;
+            
+            /* background-color: coral; */
+            background: url(/css/실습3_레이아웃/images/logo.jpg) no-repeat left ;
+
+        }
+        header .logo::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url(/css/실습3_레이아웃/images/mainlogo.jpg) no-repeat center;
+            float:left;
+
+
+        }
+        header nav{
+            width: 100%;
+            height: 30px;
+            
+            background-color: rgb(89, 211, 205);
+            float:left;
+
+        }
+        .top-menu {
+            list-style:none;
+            width:1206px;
+            height:30px;
+            padding: 0px;
+            background-color:#0eb80e;
+            float:left;
+
+
+        }
+        .top-menu li {
+            float:left;
+            padding:0px 125px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+
+        }
+        li a{
+            color: white;
+            text-decoration: none;
+        }
+        main{
+            width: 100%;
+            height: 600px;
+            background-color: royalblue;
+        }
+        main .left{
+            width: 200px;
+            height: 600px;
+            /* background-color: darkgoldenrod; */
+            background: url(/css/실습3_레이아웃/images/left_img.jpg) no-repeat left ;
+            float: left;
+        }
+        main section{
+            width: 700px;
+            height: 100%;
+            float: left;
+
+        }
+        section .divimg1{
+            width: 350px;
+            height: 300px;
+            float: left;
+            padding-top: 10px;
+            text-align: center;
+        }
+        section .divimg2{
+            width: 350px;
+            height: 300px;
+            float: left;
+            padding-top: 10px;
+            text-align: center;
+        }
+        section .divimg3{
+            width: 350px;
+            height: 300px;
+            float: left;
+            padding-top: 10px;
+            text-align: center;
+        }
+        section .divimg4{
+            width: 350px;
+            height: 300px;
+            float: left;
+            padding-top: 10px;
+            text-align: center;
+        }
+        main .right{
+            width: 306px;
+            height: 600px;
+            background-color:  plum;
+            float: left;
+
+        }
+        .right .login{
+            width: 306px;
+            height: 100px;
+        }
+        .login_wrap{
+            width: 306px;
+            height: 100px;
+        }
+        #id{
+            width: 200px;
+            height: 30px;
+            float: left;
+        }
+        #pw{
+            width: 200px;
+            height: 30px;
+            float: left;
+        }
+        #text{
+            width: 50px;
+            height: 50px;
+        }
+
+        .right rightimg{
+            width: 306px;
+            height: 300px;
+        }
+        .right .text .title{
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .right .text reply.name{
+            font-weight: bold;
+            padding-left: 20px;
+        }
+        .right .text reply.message{
+            font-weight: bold;
+            padding-left: 120px;
+        }
+        .right .text div.name{
+            width: 150px;
+            height: 138px;
+            float: left;
+            line-height: 27px;
+        }
+        .right .text div.message{
+            width: 150px;
+            height: 138px;
+            float: left;
+            line-height: 27px;
+
+        }
+        footer{
+            clear: both;
+            width: 100%;
+            height: 100px;
+            /* background-color: teal; */
+            background-image: url(/css/실습3_레이아웃/images/footer.jpg);
+            background-size: contain;
+            background-position: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class='wrap'>
+        <header>
+            
+            <div class='logo'></div>
+            
+            <nav>
+                <ul class="top-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Board</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            
+            <!-- 사이드바 -->
+            <side class='left'>왼쪽사이드</side>
+            <section>
+                <div class="divimg1">
+                    <img src='/css/실습3_레이아웃/images/main_img1.jpg'>
+                    나무를 심는 사람들
+                </div>
+
+                <div class="divimg2">
+                    <img src='/css/실습3_레이아웃/images/main_img2.jpg'>
+                    아이들에게 녹색미래를..
+                </div>
+
+                <div class="divimg3">
+                    <img src='/css/실습3_레이아웃/images/main_img3.jpg'>
+                    설악산을 살리는 길
+                </div>
+
+                <div class="divimg4">
+                    <img src='/css/실습3_레이아웃/images/main_img4.jpg'>
+                    사라지는 북극곰들
+                </div>
+            </section>
+            <side class='right'>
+                <div class='login'>
+                    <div class='login_wrap'>
+                        <input type="text" name="id" id="id" placeholder='ID를 입력하세요'>
+                        <input type="password" name="pw" id="pw" placeholder='PW를 입력하세요'>
+                        <input type="submit" value="로그인" id='text'>
+                    </div>
+                </div>
+                <div class='rightimg'>
+                    <img src='/css/실습3_레이아웃/images/right_img.jpg'>
+                </div>
+                <div class='text'>
+                    <p class='title'>나도 한마디</p>
+                    <reply class='name'>이름</reply>
+                    <reply class='message'>메세지</reply>
+                    <br>
+                    <div class='name'>
+                            길동이
+                        <br>영희
+                        <br>민수
+                        <br>철수
+                    </div>
+                    <div class='message'>
+                            자연을 살리자!
+                        <br>곰이 불쌍해요ㅜㅜ
+                        <br>ㄴ토끼도요ㅜ.ㅜ
+                        <br>토끼 귀엽다
+                    </div>
+                    
+
+                </div>
+
+            </side>
+
+        </main>
+
+        <footer>
+        
+        </footer>
+    </div>
+</body>
+</html>

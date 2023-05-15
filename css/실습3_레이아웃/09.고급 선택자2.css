@@ -1,0 +1,88 @@
+/* , 를 이용하여 선택자를 나열하면 같은 스타일을 적용 */
+#activeTest, #hoverTest{
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+}
+/* 사용자가 요소를 클릭했을때 색상 변경 */
+#activeTest:active{
+    background-color: green;
+}
+#hoverTest:hover{
+    background-color: red;;
+}
+/* 체크박스 타입의 인풋이 체크드 상태일때 적용*/
+input[type=checkbox]:checked{
+    width: 20px;
+    height: 20px;
+}
+input[type=checkbox]:checked +label{
+        font-size: 1.5em;
+    
+}
+
+/* 마우스로 선택된 요소에 스타일 적용 */
+/* 모든 텍스트 타입의 인풋요소  */
+input[type=text]:focus{
+    background-color: yellow;
+}
+/* 유저아이디,유저패스워드 요소만 선택 */
+#userId:focus , #userPw:focus{
+    background-color: black;
+}
+
+/* 옵션 사용 가능 */
+option:enabled{
+    background-color: plum;
+}
+/* 옵션 사용 불가능 */
+option:disabled{
+    background-color: slategrey;
+}
+/* 버튼 사용불가능 */
+button:disabled{
+    background-color: rgb(131, 130, 130);
+}
+
+/* 형제 관계중 첫번째 요소를 선택 */
+#test2 p:first-child{
+    background-color: red;
+}
+/* 형제 관계중 마지막 요소를 선택 */
+/* 마지막 자식이 p태그가 아니므로(pre) 스타일이 적용되지 않는다 */
+#test2 p:last-child{
+    background-color: blue;
+}
+/* 몇번째인지 직접 지정해서 요소 선택 */
+/* p태그가 아닌 태그도 순번에 포함*/
+#test2 p:nth-child(4){
+    background-color: yellow;
+}
+/* 수식을 사용하거나 수식 대신 odd(홀수),even(짝수)를 대입해 줄수 있다 */
+#test2 p:nth-child(odd){
+    background-color: purple;
+}
+
+/* 뒤에서 몇번째 선택 */
+#test3 p:nth-last-child(4){
+    background-color: skyblue;
+}
+
+/* 형제 구조 선택자 */
+/* 형제관계중 p태그중에 첫번째 요소 선택 */
+/* p태그가 아닌 태그는 순번에 포함 안됨 */
+#test4 p:first-of-type{
+    background-color: red;
+}
+#test4 p:last-of-type{
+    background-color: rgb(226, 21, 175);
+}
+#test4 p:nth-of-type(3){
+    background-color: rgb(47, 0, 255);
+}
+
+/* 부정선택자 */
+/* n번째 p 요소를 제외한 나머지 p 요소를 선택 */
+#test5 p:not(:nth-child(odd)){
+    background-color: sienna;
+}

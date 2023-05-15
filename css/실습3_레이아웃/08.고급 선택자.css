@@ -1,0 +1,58 @@
+/* 후손선택자 */
+section h1{
+    background-color: black;
+    color: white;
+}
+/* 자식선택자 */
+section > p{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+/* 인접선택자 */
+/* a 선택자 뒤에 있는 b 요소 한개를 선택 */
+#div-test +div{
+    background-color: blanchedalmond;
+}
+#room +p{
+    color: red;
+
+}
+/* a 선택자 뒤에 있는 모든 b 요소 선택 */
+#div-test ~div{
+    font-weight: 700;
+    color: blue;
+}
+
+/* 속성선택자
+선택자[속성]
+div-class 중에서 id속성을 가진 모든 요소를 선택 */
+.div-class[id]{
+    border: 1px solid black;
+}
+/* div-class 중에 id속성이 id1인 요소를 선택 */
+.div-class[id=id1]{
+    background-color: pink;
+    border: 1px solid red;
+}
+
+/* div중에 class 속성값이 class로 시작되는 태그 */
+.div-class[class^='div']{
+    text-align: center;
+    color: blueviolet;
+    background-color:#dfd21f;
+}
+
+/* id 속성의 값이 id을 포함하는 */
+.class-div[id*=id]{
+    background-color: red;
+}
+
+/* class속성의 값이 class로 끝나는 */
+.div-class[class$=class]{
+   padding: 20px; 
+}
+
+/* class 속성값에 공백이 들어있는 경우 */
+.div-class[class~=p20]{
+    padding: 20px;
+}
