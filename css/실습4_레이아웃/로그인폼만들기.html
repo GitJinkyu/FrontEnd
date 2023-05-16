@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        #login_wrap{
+            width: 306px;
+            height: 60px;
+        }
+        #login_form_input{
+            float: left;
+
+        }
+        #userID{
+            padding: 0;
+            width: 150px;
+            height: 20px;
+        }
+        #userPW{
+            padding: 0;
+            width: 150px;
+            height: 20px;
+        }
+        #login_form_btn{
+            float: left;
+        }
+        #login{
+            width: 80px;
+            height: 48px;
+        }
+        #login_link a{
+            font-size: 0.8em;
+            text-decoration: none;
+            color: rgb(87, 86, 86);
+        }
+    </style>
+</head>
+<body>
+    <h1>로그인 폼 만들기</h1>
+    <div id='login_wrap'>
+        <form id='login_form' action="" method="get">
+            <div id='login_form_input'>
+                <input type="text" name="userID" id="userID" placeholder='ID를 입력하세요'required>
+                <br>
+                <input type="password" name="userPW" id="userPW" placeholder='PW를 입력하세요' required>
+            </div>
+            <div id='login_form_btn'>
+                <input type="submit" value="로그인" id='login'>
+            </div>
+        </form>
+    </div>
+    <div id='login_link'>
+        <a href='#'>회원가입</a>
+        <a href='#'>아이디찾기</a>
+        <a href='#'>비밀번호찾기</a>
+    </div>
+</body>
+</html>

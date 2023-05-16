@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        *{
+            margin: 0;
+
+            /* 컨텐츠+패딩+보더까지 포함한 사이즈 */
+            box-sizing: border-box;
+        }
+
+        .wrap{
+            width: 1216px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 120px;
+        }
+        header .logo{
+            width: 200px;
+            height: 80px;
+            float:left;
+            margin-top: 10px;
+            text-align: center;
+
+
+            /* background: url(/css/실습4_레이아웃/images/logo.jpg) no-repeat left ; */
+            /* margin-left: 150px; */
+        }
+        header .mainlogo{
+            margin-top: 10px;
+            width: 800px;
+            height: 80px;
+            padding-left: 120px;
+            float:left;
+
+        }
+        /* header .logo::after{
+            margin: 0 auto;
+            content: '';
+            width: 900px;
+            height: 100%;
+            background: url(/css/실습4_레이아웃/images/mainlogo.jpg) no-repeat center;
+            float:left;
+        } 
+        */
+        header nav{
+            width: 100%;
+            height: 30px;
+            float:left;
+            background-color: green;
+        }
+        .top-menu {
+            list-style:none;
+            width:1215px;
+            height:30px;
+            padding: 0px;
+            float:left;
+        }
+        .top-menu li {
+            float:left;
+            width: 25%;
+            padding:0px 125px;
+            
+            text-align: center;
+
+        }
+        li a{
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+        main{
+            width: 100%;
+            height: 600px;
+            margin-top: 10px;
+
+        }
+        main .left{
+            width: 200px;
+            height: 600px;
+            /* background-color: darkgoldenrod; */
+            background: url(/css/실습4_레이아웃/images/left_img.jpg) no-repeat left ;
+            float: left;
+        }
+        main section{
+            width: 680px;
+            height: 100%;
+            float: left;
+
+        }
+        section .divimg1{
+            width: 330px;
+            height: 250px;
+            float: left;
+            margin: 0px 5px;
+            text-align: center;
+        }
+        section .divimg2{
+            width: 330px;
+            height: 250px;
+            float: left;
+            margin: 0px 5px;
+            text-align: center;
+        }
+        section .divimg3{
+            width: 330px;
+            height: 250px;
+            padding-top: 20px;
+            margin: 0px 5px;
+            text-align: center;
+            float: left;
+
+        }
+        section .divimg4{
+            width: 330px;
+            height: 250px;
+            padding-top: 20px;
+            margin: 0px 5px;
+            text-align: center;
+            float: left;
+
+        }
+        main .right{
+            width: 316px;
+            height: 600px;
+            float: left;
+
+        }
+        .right .login{
+            width: 316px;
+            height: 100px;
+        }
+        #login_wrap{
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 316px;
+            height: 60px;
+        }
+        #login_form_input{
+            float: left;
+        }
+        #userID{
+            padding: 0;
+            width: 150px;
+            height: 30px;
+        }
+        #userPW{
+            padding: 0;
+            width: 150px;
+            height: 30px;
+        }
+        #login_form_btn{
+            float: left;
+        }
+        #login{
+            margin-left: 30px;
+            width: 80px;
+            height: 60px;
+        }
+        #login_link{
+            text-align: center;
+        }
+        #login_link a{
+            text-decoration: none;
+            font-size: 0.8em;
+            color: rgb(87, 86, 86);
+        }
+        .right .rightimg{
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 316px;
+            height: 300px;
+            background-image:  url(/css/실습4_레이아웃/images/right_img.jpg) ;
+            background-repeat: no-repeat;
+        }
+        .right .rightchat{
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 306px;
+            height: 180px;
+            float: left;
+            background-image: url(/css/실습4_레이아웃/images/me_chat.jpg);
+            background-repeat: no-repeat;
+
+        }
+        footer{
+            clear: both;
+            font-weight: bold;
+            text-align: center;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class='wrap'>
+        <header>
+            <div class='logo'>
+                <img src='/css/실습4_레이아웃/images/logo.jpg'>
+            </div>
+            <div class='mainlogo'>
+                <img src='/css/실습4_레이아웃/images/mainlogo.jpg'>
+            </div>
+            <nav>
+                <ul class="top-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Board</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 사이드바 -->
+            <side class='left'></side>
+            <section>
+                <div class="divimg1">
+                    <img src='/css/실습4_레이아웃/images/main_img1.jpg'width="100%" height="240px">
+                    나무를 심는 사람들
+                </div>
+                <div class="divimg2">
+                    <img src='/css/실습4_레이아웃/images/main_img2.jpg'width="100%" height="240px">
+                    아이들에게 녹색미래를..
+                </div>
+                <div class="divimg3">
+                    <img src='/css/실습4_레이아웃/images/main_img3.jpg'width="100%" height="240px">
+                    설악산을 살리는 길
+                </div>
+                <div class="divimg4">
+                    <img src='/css/실습4_레이아웃/images/main_img4.jpg'width="100%" height="240px">
+                    사라지는 북극곰들
+                </div>
+            </section>
+            <side class='right'>
+                <div id='login_wrap'>
+                    <form id='login_form' action="" method="get">
+                        <div id='login_form_input'>
+                            <input type="text" name="userID" id="userID" placeholder='ID를 입력하세요'required>
+                            <br>
+                            <input type="password" name="userPW" id="userPW" placeholder='PW를 입력하세요' required>
+                        </div>
+                        <div id='login_form_btn'>
+                            <input type="submit" value="로그인" id='login'>
+                        </div>
+                    </form>
+                </div>
+                <div id='login_link'>
+                    <a href='#'>회원가입</a>
+                    <a href='#'>아이디찾기</a>
+                    <a href='#'>비밀번호찾기</a>
+                </div>
+                <div class='rightimg'>
+                </div>
+                <div class='rightchat'>
+
+                </div>
+                
+            </side>
+        </main>
+        <footer>
+            <p>ⓒExample from JAVA Web Developer Junior</p>
+        </footer>
+    </div>
+</body>
+</html>
