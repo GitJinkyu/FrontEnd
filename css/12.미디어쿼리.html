@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        body{
+            background-image: url(/html/images/bg1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 가로가 1024 이하이면 */
+        @media screen and (max-width:1024px) {
+            body{
+                background-image: url(/html/images/bg2.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+        }
+
+        /* 760이하이면 */
+        @media screen and (max-width:760px){
+            body{
+                background-image: url(/html/images/bg3.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+        }
+
+        /* 500이하이면 */
+        @media screen and (max-width:500px){
+            body{
+                background-image: url(/html/images/bg4.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Query</h1>
+</body>
+</html>
