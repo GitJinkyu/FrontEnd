@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃</title>
+    <style>
+        .wrapper1{
+            display: grid;
+
+            /* 최소값 200px,최대값 1fr
+            화면을 꽉 채울만큼 컬럼 너비를 늘려서 표시 */
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        }
+        .wrapper2{
+            display: grid;
+
+            /* 최소값 200px,최대값 1fr
+            컬럼 최소너비만큼 채워서 표시 */
+            grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        }
+        .item{
+            padding: 10px;
+            background-color: #eee;
+        }
+        .item:nth-child(even){
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <h2>auto-fill/auto-fit</h2>
+    컬럼의 너비와 함께 auto-fill이나 auto-fit을 지정 하면
+    화면 너비에 따라 자동으로 컬럼의 갯수를 조절
+
+    auto-fit:남는 공간 없이 꽉 채우기
+    auto-fill:최소너비까지 표시하고 남는 공간은 그대로 둠
+
+
+    <h2>auto-fit</h2>
+    <div class="wrapper1">
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+    </div>
+
+
+    <h2>auto-fill</h2>
+    <div class="wrapper2">
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+        <div class="item">Velit sunt non enim cillum minim id eu minim dolore enim dolore cillum eiusmod commodo.</div>
+    </div>
+</body>
+</html>

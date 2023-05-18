@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+    margin: 0px auto;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+#container{
+    width: 1200px;
+    height: 600px;
+  
+}
+header{
+    width: 100%;
+    height: 100px;
+    background-color: royalblue;
+}
+#slideShow{
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+#logo{
+    width: 300px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    float: left;
+}
+h1{
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 3em;
+}
+nav #topmenu{
+
+}
+nav #topmenu .submenu{
+}
+nav ul{
+    width: 100%;
+    height: 100px;
+}
+nav ul li{
+    margin-left: 80px;
+    padding-top: 60px;
+    width: 100px;
+    float: left;
+    overflow: hidden;
+}
+nav ul li a{
+    font-weight: bold;
+    color: white;
+}
+
+
+#contents{
+    margin: 0;
+    width: 100%;
+    height: 600px;
+  
+
+}
+
+
+#tabMenu input[type=radio]{
+    display: none;
+}
+.tabContent{
+    display: none;
+
+    
+    line-height: 2;
+    width: 100%;
+}
+
+#tabMenu{
+    margin: 0;
+    width: 500px;
+    height: 300px;
+    float: left;
+    /* position: relative; */
+}
+
+#tabMenu label{
+    margin: 10px;
+    display: inline-block;
+    color: #ccc;
+    padding: 20px;
+    margin: 0px;
+    font-weight: 600;
+    height: 60px;
+}
+#tabMenu label:hover{
+    color: rgb(12, 12, 12);
+}
+/* 라디오 버튼이 checked 상태 일때 탭 메뉴 */
+#tabMenu input:checked + label{
+    border: 1px solid gray;
+    background-color: #eee;
+    color: darkred;
+}
+
+#tab1:checked ~ #notice
+,#tab2:checked ~ #gallery{
+    display:block
+}
+
+
+article>ul{
+    border-top: 1px solid #ccc;
+    /* margin-top: 10px; */
+    padding-top: 20px;
+    padding-left: 0px;
+    
+
+}
+#gallery ul li{
+    display: inline;
+
+}
+#gallery>ul>li>img{
+    width: 30%;
+
+}
+
+#links{
+    width: 690px;
+    height: 300px;
+    padding-top: 40px;
+    padding-left: 170px;
+    float: left;
+    text-align: center;
+
+}
+#links ul{
+    width: 100%;
+    padding: 0;
+    float: left;
+}
+
+#links ul li{
+    width: 170px;
+    float: left;
+    padding: 0px 10px;
+}
+
+ .iconimg{
+    border-radius: 50%;
+ }
+
+ #bottomMenu{
+    border-top: 3px solid black;
+    width: 100%;
+    height: 70px;
+    position: relative;
+
+ }
+ #bottomMenu ul{
+    padding: 0;
+    margin-top: 10px;
+    width: 500px;
+    height: 70px;
+    float: left;
+
+ }
+ #bottomMenu ul li{
+    margin: 0;
+    padding: 10px 20px;
+    float: left;
+ }
+
+ .border1{
+    border-right: 1px solid gray;
+    
+ }
+ .border2{
+    border-right: 1px solid gray;
+
+ }
+ .border3{
+    border-right: 1px solid gray;
+
+ }
+
+ #bottomMenu ul li a{
+    text-align: center;
+    color: #8f8f8f;
+
+ }
+ #sns{
+    width: 120px;
+    height: 30px;
+    float: left;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+ }
+ #company{
+    margin: 0;
+    width: 500px;
+    color: #ccc;
+ }
