@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px auto;
+            text-align: center;
+
+        }
+        #container{
+            margin-top: 200px;
+            width: 1400px;
+            height: 500px;
+        }
+        #div1{
+            width: 100%;
+            height: 200px;
+        }
+        #btnwrap{
+            width: 100%;
+            height: 500px;
+        }
+        div{
+            font-size: 2.5em;
+        }
+        button{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <hr>
+    <div id='container'>
+        <h1>인치를 cm로 변환하기📏</h1>
+        <div id="div1" class="div-test">
+
+        </div>
+        <div id='btnwrap'>
+        <button onclick="inchtocm();">변경</button>
+        </div>
+    </div>
+    <script>
+        function inchtocm(){
+            let div1 = document.querySelector('#div1');
+
+            let inch = prompt("인치를 입력하세요");
+            let result = inch*2.54;
+
+            div1.innerHTML = result+"cm입니다.";
+        
+        }
+    </script>
+</body>
+</html>
