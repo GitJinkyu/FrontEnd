@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 스코프</title>
+    <script src='02.변수와 스코프.js'> </script>
+</head>
+<body>
+    <h2>기본문법</h2>
+    <h3>1)전역변수와 지역변수</h3>
+    
+    <ul>
+        <li>
+            <h4>전역변수와 지역변수</h4>
+            <p>전역변수 : 함수 외부에서 선언 (어디서든 사용가능)</p>
+            <p>지역변수 : 함수 내부에서 선언 (함수 내에서만 사용가능)</p>
+        </li>
+    </ul>
+
+    <h3>2)변수와 스코프</h3>
+    <ul>
+        <li>
+            <h4>스코프</h4>
+            식별자가 선언된 위치 및 예약어에 따라 유효범위가 결정된다
+            <ul>
+                <li>함수레벨 스코프(var)
+                    <br>함수 외부에서 함수 내부에서 선언된 변수에 접근 불가
+                </li>
+                <li>블럭레벨 스코프(let,const)
+                    <br>블럭 외부에서 블럭 내부에 선언된 변수에 접근 불가
+                </li>
+            </ul>
+        </li>
+        <h4>var 예약어의 문제점</h4>
+        <ul>
+            <li>함수 레벨 스코프(function-level scope)
+                <p>함수의 코드 블록만을 스코프로 인정한다.</p>
+                <p>함수 외부에서 생성한 변수는 모두 전역 변수이다.
+                    이는 전역변수를 남발한 가능성을 높인다.</p>
+                <p></p>
+            </li>
+
+            <li>
+
+            </li>
+
+            <li>
+
+            </li>
+        </ul>
+
+    </ul>
+</body>
+</html>
