@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>배열_실습</title>
 </head>
+<style>
+    #print2{
+        height: 20px;
+    }
+</style>
 <body>
     <h1>배열_실습</h1>
 
@@ -111,22 +116,26 @@
 	<div id="result1"></div>
     <button onclick="print()">출력</button>
 
+    
     <script>
         let array = new Array();
         function input(){
-            let value = document.querySelector('#strInput');
+            let inputvalue = document.querySelector('#strInput').value;
 
 
             // strInput 박스에 입력된 값을 배열에 추가
-            array.push(value.value);
+            array.push(inputvalue);
 
             console.log(array);
 
             // 입력창 초기화
-            value.value='';
+            document.querySelector('#strInput').value='';
+            
+            
 
         }
 
+        
         function print(){
             let print = document.querySelector('#print2');
 
@@ -173,17 +182,34 @@
             let add = document.querySelector('#add').value;
             let print = document.querySelector('#print4');
 
-            for(let i = 0; i < arr.length; i++) {
-                if(arr[i] === `${remove}`)  {
-                    arr.splice(i, 1);
-                }
-            }
+            // for문을 사용해서 입력값과 배열값 비교해서 일치한 값 삭제하기
+            // for(let i = 0; i < arr.length; i++) {
+            //     if(arr[i] === `${remove}`)  {
+            //         arr.splice(i, 1);
+            //     }
+            // }
+
+            // indexOf를 사용해서 삭제할 값의 인덱스를 변수에 저장하고 
+            // splice에 그 변수를 대입해서 삭제하기
+            // 삭제할 요소의 인덱스를 확인후 삭제
+            // 요소의 인덱스를 반환해주는 indexOf사용
+            // 없으면 -1을 반환함
+            let index = arr.indexOf(remove);
+            console.log(index);
+            arr.splice(index,1);
+
+
+            // if(index >= 0 ){
+            //     arr.splice(index,1);
+
+            // }
             
 
-            arr.splice(4,0,`${add}`);
+            // 값 추가하기
+            arr.push(add);
 
     
-
+            // 출력
             print.innerHTML =arr;
 
 
