@@ -7,21 +7,23 @@
   <title>classList 활용하기</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src='classlist-4.js'></script>
+
+  <!-- 외부스크립트파일 -->
+  <!-- <script src='classlist-4.js'></script> -->
 </head>
 <body>
-  <button id='mode'>모드변경</button>
-  <h1 id="title">My Profile</h1>
+  <button id='mode' onclick='darkmode()'>모드변경</button>
+  <h1 id="title" onclick='clicked()'>My Profile</h1>
   <div id="profile">
     <img src="images/pf.png" alt="도레미" >
     <div id="desc">
-      <p class="user">이름 : 도레미</p>
-      <p class="user">주소 : somewhere</p>
-      <p class="user">연락처 : 1234-5678</p>
+      <p class="user" onclick='pclicked(this)'>이름 : 도레미</p>
+      <p class="user" onclick='pclicked(this)'>주소 : somewhere</p>
+      <p class="user" onclick='pclicked(this)'>연락처 : 1234-5678</p>
     </div>
   </div>
 
-<!-- <script>
+<script>
   function clicked(){
 
     // 클릭시 class속성에 clicked 추가
@@ -37,25 +39,18 @@
     // }
 
   
-    // 토클 : 클릭할때마다 class속성에 clicke를 추가하거나 삭제
+    // 토클 : 클릭할때마다 class속성에 clicked를 추가하거나 삭제
     title.classList.toggle('clicked');
   }
 
-  function ppclick(){
-    let user = document.querySelector('#desc p');
-    // user.classList.toggle('blue-italic');
-    for (let i=0; i < user.length; i++) {
-      user[i].addEventListener('click', ()=> {
-        user[i].classList.toggle('blue-italic');
-    });
-}
-
-
-  }
-
   function darkmode(){
-    documnet.body.classListt.toggle('dark')
+    document.body.classList.toggle('dark')
   }
-</script> -->
+
+  function pclicked(ptag){
+    console.log(ptag);
+    ptag.classList.toggle('blue-italic');
+  }
+</script>
 </body>
 </html>
