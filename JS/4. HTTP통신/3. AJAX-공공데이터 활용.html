@@ -27,15 +27,59 @@
     </div>
 
     <script>
-        let url = 'https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=AV8YnF8Gec%2BPlxcOcBtpVkgWtjRT2leann9TL5i%2FbBa3Y5ydPgSDt7yg6oXJLZfek2QzbKlXfuf1PG7BU1cq5g%3D%3D&numOfRows=50&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=128.6142847&mapY=36.0345423&radius=2000&_type=json';
+        let url='https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=AV8YnF8Gec%2BPlxcOcBtpVkgWtjRT2leann9TL5i%2FbBa3Y5ydPgSDt7yg6oXJLZfek2QzbKlXfuf1PG7BU1cq5g%3D%3D&numOfRows=50&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=128.6142847&mapY=36.0345423&radius=2000&_type=json'
         let xhr = new XMLHttpRequest();
 
-        // 방식, 자료위치, 비동기 여부(기본: 비동기)
-        xhr.open('get', url);
+        //방식,자료위치,비동기 여부(기본: 비동기)
+        xhr.open('get',url);
 
         // 서버에 자료를 요청
         xhr.send();
 
+        // xhr.onreadystatechange=function(){
+        //     if(xhr.readyState === 4 && xhr.status === 200){
+            
+        //     // jsObj로 변환
+        //     let jsObj = JSON.parse(xhr.responseText);
+
+        //     let item=jsObj.response.body.items.item;
+
+        //     // 화면에 출력
+
+            
+
+        //     let result= document.querySelector('#result')
+        //     result.innerHTML+='<ul>'
+               
+
+        //         for(let i in item){
+                    
+        //             result.innerHTML+=`
+        //             <li>
+        //                 <h1>캠핑장 이름: ${jsObj.response.body.items.item[i].facltNm}</h1>
+        //                 <p><b>주소:</b> ${jsObj.response.body.items.item[i].addr1}</p>
+        //                 <p><b>소개:</b> ${jsObj.response.body.items.item[i].intro}</p>
+        //                 <img src="${jsObj.response.body.items.item[i].firstImageUrl}" alt="">
+        //                 <div id="map${i}" style="width:1000px;height:850px;"></div>
+
+        //             </li>
+        //             `;
+        //             let mapY = jsObj.response.body.items.item[i].mapY
+        //             let mapx = jsObj.response.body.items.item[i].mapX
+        //             var mapContainer = document.getElementById(`map${i}`), // 지도를 표시할 div 
+        //             mapOption = { 
+        //                 center: new kakao.maps.LatLng(mapY, mapx), // 지도의 중심좌표
+        //                 level: 3 // 지도의 확대 레벨
+        //             };
+
+        //             // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        //             var map = new kakao.maps.Map(mapContainer, mapOption)        
+                        
+        //         }
+        //     result.innerHTML+='</ul>'
+        //     }  
+            
+        // }
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // jsObj로 변환
@@ -44,20 +88,35 @@
 
                 // 화면에 출력
                 let result = document.querySelector('#result');
-                result.innerHTML = '<ul>';
+                let ul = document.createElement('ul');
+                result.appendChild(ul);
 
                 for (let i in item) {
-                    let html = `
-                        <li>
-                            <h1>캠핑장 이름: ${jsObj.response.body.items.item[i].facltNm}</h1>
-                            <p><b>주소:</b> ${jsObj.response.body.items.item[i].addr1}</p>
-                            <p><b>소개:</b> ${jsObj.response.body.items.item[i].intro}</p>
-                            <img src="${jsObj.response.body.items.item[i].firstImageUrl}" alt="">
-                            <div id="map${i}" style="width:1000px;height:850px;"></div>
-                        </li>
-                    `;
+                    let li = document.createElement('li');
+                    ul.appendChild(li);
 
-                    result.innerHTML += html;
+                    let h1 = document.createElement('h1');
+                    h1.innerText = `캠핑장 이름: ${jsObj.response.body.items.item[i].facltNm}`;
+                    li.appendChild(h1);
+
+                    let addressP = document.createElement('p');
+                    addressP.innerHTML = `<b>주소:</b> ${jsObj.response.body.items.item[i].addr1}`;
+                    li.appendChild(addressP);
+
+                    let introP = document.createElement('p');
+                    introP.innerHTML = `<b>소개:</b> ${jsObj.response.body.items.item[i].intro}`;
+                    li.appendChild(introP);
+
+                    let img = document.createElement('img');
+                    img.src = jsObj.response.body.items.item[i].firstImageUrl;
+                    img.alt = "";
+                    li.appendChild(img);
+
+                    let mapDiv = document.createElement('div');
+                    mapDiv.id = `map${i}`;
+                    mapDiv.style.width = "500px";
+                    mapDiv.style.height = "350px";
+                    li.appendChild(mapDiv);
 
                     let mapY = jsObj.response.body.items.item[i].mapY;
                     let mapX = jsObj.response.body.items.item[i].mapX;
@@ -70,9 +129,7 @@
                     // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
                     let map = new kakao.maps.Map(mapContainer, mapOption);
                 }
-
-                result.innerHTML += '</ul>';
-            }  
+            }
         };
     </script>
 </body>
