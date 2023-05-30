@@ -1,0 +1,37 @@
+*{
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+
+ul{
+  width:100%;
+  padding: 0;
+
+}
+
+li{
+  padding: 5px 0px;
+
+  text-align: center;
+  list-style: none;
+}
+
+#container {
+  width: 400px;
+  margin: 20px auto;
+}
+h1 {
+  font-size:1.5em;
+  text-align: center;
+  padding: 10px 0px;
+}
+h2 {
+  font-size: 1.2em;
+}
+#result {
+  width:100%;
+  
+  /* margin:20px 0px; */
+  
+
+}

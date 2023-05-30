@@ -31,9 +31,14 @@ th, td {
   border:1px solid #ccc;
   padding:10px;            
 }
+
+
 th:first-of-type {
   width:150px;
 }
 th:last-of-type {
   width:250px;
+}
+th:nth-child(2) {
+  width:200px;
 }
