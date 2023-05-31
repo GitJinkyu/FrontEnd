@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공데이터</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script src='4. AJAX-공공데이터 활용.js'></script>
+</head>
+<body>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2709e3dd1b282c27d5db830b60e9f8c6"></script> 
+    <button id="getLocation">내 위치 정보 가져오기</button>
+    <div id='myMap'></div>
+
+    <form id='campForm' action="">
+        <div class='hidden'>
+            serviceKey  <input type="text" name="serviceKey" id="serviceKey" value='AV8YnF8Gec%2BPlxcOcBtpVkgWtjRT2leann9TL5i%2FbBa3Y5ydPgSDt7yg6oXJLZfek2QzbKlXfuf1PG7BU1cq5g%3D%3D'><br>
+            MobileOS    <input type="text" name="MobileOS" id="MobileOS" value='ETC'><br>
+            MobileApp   <input type="text" name="MobileApp" id="MobileApp" value='AppTest'><br>
+            _type       <input type="text" name="_type" id="_type" value='json'><br>
+            mapX        <input type="text" name="mapX" id="mapX" value='128.6142847'><br>
+            mapY        <input type="text" name="mapY" id="mapY" value='36.0345423'><br>
+        </div>
+
+        numOfRows   <input type="text" name="numOfRows" id="numOfRows" value='10'><br>
+        pageNo      <input type="text" name="pageNo" id="pageNo" value='1'><br>
+        radius      <input type="text" name="radius" id="radius" value='2000'><br>
+        <!-- _type: json 형식으로 받아오기 위해 설정 -->
+        <button id='btnCamInfo'>캠핑장 정보 조회</button>
+    </form>
+    <div id='result'></div>
+
+
+</body>
+</html>
