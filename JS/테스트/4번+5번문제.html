@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        *{
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 800px;
+            height: 600px;
+        
+        }
+        h3{
+            text-align: center;
+        }
+        table{
+            border:  1px solid black;
+
+        }
+        tr{
+            border:  1px solid black;
+        }
+        td{
+            border:  1px solid black;
+            width: 510px;
+        }
+        th{
+            border:  1px solid black;
+            width: 100px;
+            height: 30px;
+        }
+        p{
+            text-align: center;
+        }
+        textarea{
+            width: 510px;
+            height: 100px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script src='4번+5번문제.js'></script>
+</head>
+<body>
+    <p><button id='toggle'>회원가입하기</button></p>
+<div id='container' class='hidden'>
+    <h3>회원가입 폼</h3>
+    <form name='signform' id='signform'>
+            <table>
+                <!-- 아이디 -->
+                <tr>
+                    <th>ID</th>
+                    <td>
+                        <input type="text" name="userID" id="userID"  required size='10'>
+                        <input type='button' value='ID중복검사'>
+                    </td>
+                </tr>
+
+                <!-- 비밀번호 -->
+                <tr>
+                    <th><label for='userPW'><b>비밀번호</b></label></th>
+                    <td>
+                        <input type="password" name="userPW" id="userPW"  required size='10'>
+                    </td>
+                </tr>
+
+                <!-- 이름 -->
+                <tr>
+                    <th><label for='userName'>성명</label></th> 
+                    <td>
+                        <input type="text" name="userName" id="userName"  required size='10'>
+                    </td>
+                </tr>
+
+                <!-- 이메일 -->
+                <tr>
+                    <th><label for='frontemail'><b>Email</b></label></th>
+                    <td>
+                        <input type="email" name="frontemail" id="frontemail"  required size='10'>
+                        <span>@</span>
+                        <input type="email" name="backemail" id="backemail"  required size='10'>
+                        <select onchange="func(this.value)">
+                                <!-- selected=기본값 -->
+                                <option value='default' label='직접입력' selected>직접입력</option>
+                                <option value='@naver.com'>@naver.com</option>
+                                <option value='@google.com'>@google.com</option>
+                        </select>
+                    </td>
+                </tr>    
+
+                <!-- 핸드폰 -->
+                <tr>
+                    <th><label for='frontphone'><b>핸드폰</b></label></th>
+                    <td>
+                        <select id='phoneselect'>
+                        <!-- selected=기본값 -->
+                        <option value='default' label='번호선택' selected>번호선택</option>
+                        <option value='010'>010</option>
+                        <option value='011'>011</option>
+                        </select>
+                        <input type="number" name="phone" id="frontphone"  required size='10'>
+                        <span>-</span>
+                        <input type="number" name="phone" id="backphone"  required size='10'>
+                    </td>   
+                </tr>
+
+                <!-- 성별 -->
+                <tr>
+                    <th><label for='frontphone'><b>성별</b></label></th>
+                    <td>
+                        <input type="radio" name="gender" id="gender" value='M'>남자
+                        <input type="radio" name="gender" id="gender" value='F'>여자
+                    </td>
+                </tr>
+
+                <!-- 취미 -->
+                <tr>
+                    <th><label for='hobby'><b>취미</b></label></th>
+                    <td>
+                        <input type="checkbox" name="hobby" value='baseball'>공부
+                        <input type="checkbox" name="hobby" value='baseball'>등산
+                        <input type="checkbox" name="hobby" value='baseball'>게임
+                        <input type="checkbox" name="hobby" value='baseball'>낚시
+                        <input type="checkbox" name="hobby" value='baseball'>쇼핑
+                    </td>
+                </tr>
+
+                <!-- 자기소개 -->
+                <tr>
+                    <th><label for='introduce '><b>자기소개</b></label></th>
+                    <td>
+                        <textarea name="introduce " id="introduceself"  placeholder='자기소개를 100자 이내로 입력하세요'>
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" value="회원가입">
+                <input type="reset" value="취소">
+            </p>
+        
+    </form>
+</div>
+    
+</body>
+
+</html>
