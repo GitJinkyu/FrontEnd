@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "frontEx",
+			"path": "../../workFront강사님/frontEx"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "workFront"
+	}
+}
