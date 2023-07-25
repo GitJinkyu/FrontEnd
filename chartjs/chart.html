@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    https://www.chartjs.org/
+    <h2>월별 회원가입 현황</h2>
+
+<div>
+  <canvas id="myChart" width='1050px' height='800px'></canvas>
+</div>
+
+<!-- char.js 사용을 위해 CDN 추가 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // 차트를 보여줄 요소 선택
+  const ctx = document.getElementById('myChart');
+
+    //차트 생성
+  new Chart(ctx, {
+    //그래프의 종류
+    type: 'line', //bar : 막대 그래프 , line : 선그래프
+    data: {
+        //하단레이블
+      labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      datasets: [{
+        //상단레이블
+        label: '# 가입자수',
+        data: [12, 19, 3, 5, 2, 6, 9, 4, 14, 20, 8, 6],
+        borderWidth: 1
+      }]
+    },
+    options: {
+        //사이즈 조정
+      responsive:false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

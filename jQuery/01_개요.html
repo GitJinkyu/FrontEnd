@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='/resources/js/jquery-3.7.0.js'></script>
+</head>
+<body>
+    <h2>jQuery</h2>
+    <p>
+        jQuery는 웹 개발에서 자주 사용되는 Javascript 라이브러리
+        HTML 문서의 조작, 이벤트 처리, 애니메이션
+        AJAX요청 등을 간단하고 효율적으로 처리
+
+    </p>
+
+    <h3>jQuery 라이브러리 연결 방법</h3>
+    <p>
+        1)파일 <br>
+        2)링크 (CDM방식) <br>
+    </p>
+
+    <p> 
+        <pre>
+            window.onload = function(){
+                //실행내용
+            };
+
+            window.onload는 
+            요소 다 로딩되고,외부문서들도 다 가지고 온 뒤 실행
+            +한번만 실행 가능(한번만 가능, 마지막꺼만 적용됨 
+                            ->이벤트핸들러를 이용시 여러번 적용가능)
+        </pre>
+    </p>
+    <script>
+        jQuery(document).ready(function(){
+            console.log('jQuery')  ;
+        })
+
+        $(document).ready(function(){
+            console.log('$(document)');
+        })
+
+        //가장 많이쓰는 축약 
+        //window.onload와 같음
+        $(function(){
+            console.log('jQuery~!');
+            //css 선택자를 이용
+            //$(선택자).css(속성,값)
+            $('h2').css('backgroundColor','Yellow')
+            
+            $('#test').css('backgroundColor','blue')
+        })
+    </script>
+
+    <div id='test'>DIV요소 선택</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="/resources/js/jquery-3.7.0.js"></script>
+
+</head>
+<body>
+    <h1>기본 선택자를 이용한 요소 선택</h1>
+    <p>특정 아이디값을 가진 요소 "하나만"을 선택 하고자 할때</p>
+    
+    <h1 id='t1'>테스트1(js)</h1>
+    <h1 id='t2'>테스트2(jQuery)</h1>
+
+    <script>
+
+        $(function(){
+            //js
+            document.querySelector('#t1').style.color='red'
+            
+            //jQuery
+            $('#t2').css('color','blue')
+            $('#t2').html('html 변경~~') //innerHTML
+            $('#t2').text('text 변경~~') //innerTEXT
+
+            
+            console.log('1. ',document.querySelector('#t1'));
+            console.log('2. ',t2)
+            console.log('3. ',$('#t2'))
+        })
+        
+    </script>
+    <hr>
+    <hr>
+    <hr>
+
+    <h3>태그 선택자</h3>
+
+    <p>사과</p>
+    <p>자두</p>
+    <p>포도</p>
+
+    <h5>갑</h5>
+    <h5>을</h5>
+    <h5>병</h5>
+
+    <script>
+    $(function(){
+        $('h5').css('color','purple')
+
+        //여러종류의 요소들을 선택
+        $('p, h6, #h1').css('background','green')
+
+        console.log($('h5'));
+    })
+
+    </script>
+
+
+    <h3>클래스 선택자</h3>
+    
+    <h1 class="item">c1</h1>
+    <h2 class="item select" >c2</h2>
+    <h1 class="item select">c3</h1>
+
+    <script>
+        $(function(){
+            $('.select').css('background','purple')
+            $('.select').click(function(){
+                console.log('jQuery event 발생 성공');
+            })
+    
+    
+        })
+    
+    </script>
+
+</body>
+</html>
